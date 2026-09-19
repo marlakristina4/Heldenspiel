@@ -8,7 +8,7 @@
  */
 public class Waffe
 {
-    private int bonus;
+    private int bonus = 0;
     private String material;
     private int magie;
     
@@ -16,7 +16,14 @@ public class Waffe
     public Waffe(String pMaterial; int pMagie)
     {
         material = pMaterial;
-        magie = pMagie;
+        if((pMagie >= 0) && (pMagie <= 10))
+        {
+            magie = pMagie;
+        }
+        else
+        {
+            magie = 2;
+        }
         if(material.equals("Holz"))
         {
             bonus = 3;
